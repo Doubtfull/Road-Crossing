@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField]
+    GameObject GameOverMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,14 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacles")
+        {
+            GameOverMenu.SetActive(true);
+        }
     }
 
     private void Move()

@@ -8,17 +8,17 @@ public class MenuScript : MonoBehaviour
     [SerializeField]
     private GameObject MainMenu;
     [SerializeField]
-    private GameObject OptionsMenu;
+    private GameObject HTPMenu;
 
     public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void Options()
+    public void HowToPlay()
     {
         MainMenu.SetActive(false);
-        OptionsMenu.SetActive(true);
+        HTPMenu.SetActive(true);
     }
 
     public void Quit()
@@ -30,6 +30,6 @@ public class MenuScript : MonoBehaviour
     public void Back()
     {
         MainMenu.SetActive(true);
-        OptionsMenu.SetActive(false);
+        HTPMenu.SetActive(false);
     }
 }
